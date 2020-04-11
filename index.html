@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js">
       // import {Howl, Howler} from 'howler';
     </script>
-    <script src="js/oven-buttons.js"></script>
+
   </head>
 
   <body style="background-color: #88AAA3;">
@@ -33,28 +33,28 @@
     </div>
     </div>
     <div class="ovenBackground">
-    <div class="ovenTop">
-      <!-- temp buttons -->
-      <div id="temperature">0</div>
+    <div class="oven-exterior">
+      <div class="oven-display">
+        <p class="temp-text" id="temperature">100 <sup>o</sup></p>
+      </div>
       <input type="button" id="tempUp" onClick="tempUp()">Up</input>
       <input type="button" id="tempDown" onClick="tempDown()">Down</input>
-      <!-- temp buttons -->
-    <div class="ovenButtons"></div>
-    <div class="ovenButtons"></div>
-    <div class="ovenButtons"></div>
-    <div class="ovenButtons"></div>
-    </div>
-    <div class="ovenDoor">
-      <div class="bread_first">
-        <span class="bread1__strip bread1__strip--1"></span>
-        <span class="bread1__strip bread1__strip--2"></span>
-        <span class="bread1__strip bread1__strip--3"></span>
+      <div class="temp-text time-text"></div>
+      <div class="oven-temp">
+        <div class="temp-indicator"></div>
       </div>
+      <div class="oven-temp oven-timer">
+        <div class="temp-indicator"></div>
       </div>
-      
+      <div class="oven-interior">
+        <div class="interior-lines"></div>
+      </div>
+      <div class="oven-door door">
+        <div class="oven-handle"></div>
+      </div>
     </div>
-    <div class="ovenBottom"></div>
     </div>
+    <script src="js/oven-buttons.js"></script>
 
 
     <div class="bread_final">
@@ -111,7 +111,7 @@
     function startTimer(){
       increment();
     }
-  
+
     function increment(){
       if (baking == 1){
         setTimeout(function() {

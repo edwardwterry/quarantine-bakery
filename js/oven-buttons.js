@@ -14,7 +14,7 @@ let temperature = document.getElementById('temperature');
     };
 
 
-var element = document.querySelector(".ovenDoor");
+var element = document.querySelector("door");
 element.addEventListener("click", toggleDoor);
 
 function toggleDoor() {
