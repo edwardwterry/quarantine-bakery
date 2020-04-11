@@ -102,9 +102,28 @@
       }
     }
 
-    function startTimer(){
 
+    // https://www.youtube.com/watch?v=kDnfrlK2CLg&t=315s
+    let door_closed_at;
+    let door_opened_at;
+    let time = 0;
+
+    function startTimer(){
+      increment();
     }
+  
+    function increment(){
+      if (baking == 1){
+        setTimeout(function() {
+          time++;
+          increment();
+        }, 100);
+      }
+    }
+    // close the door
+    // start the timer
+    // open the door
+    // check the difference between opened-closed, compare to range
 
       });
     </script>
