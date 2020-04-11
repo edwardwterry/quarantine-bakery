@@ -1,12 +1,3 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-body {
-  background: lightgrey;
-}
-
 .oven-exterior {
   position: absolute;
   top: 0px;
@@ -134,5 +125,5 @@ body {
 .doorOpen
 {
   /*prespectiv creates the door open effect*/
-  transform: perspective(500px) translateZ(0px) translateX(0px) translateY(0px) rotateX(-105deg);
+  transform: perspective(1000px) translateZ(0px) translateX(0px) translateY(0px) rotateX(-105deg);
 }

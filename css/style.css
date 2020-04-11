@@ -1,3 +1,13 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #88AAA3;
+}
+
+
 /* Fonts */
 .recipe {
   font-family: 'Pacifico', cursive;
