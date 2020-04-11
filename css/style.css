@@ -99,39 +99,6 @@
     background-color: #D7CDC4;
   }
 
-  .ovenDoor{
-    position: absolute;
-    text-align: center;
-    margin: 0%;
-    width: 100%;
-    height: 10%;
-    top: 10%;
-    right: 0;
-    background-color: #F7ECDF;
-  }
-
-  .ovenBottom{
-    position: absolute;
-    text-align: center;
-    margin: 0%;
-    width: 100%;
-    height: 20%;
-    bottom: 0%;
-    right: 0;
-    background-color: #645A54;
-  }
-
-  .ovenTop{
-    position: absolute;
-    text-align: center;
-    margin: 0%;
-    width: 100%;
-    height: 10%;
-    top: 10%;
-    right: 0;
-    background-color: #F7ECDF;
-  }
-
   .ovenButtons{
     display: inline-block;
     text-align: center;

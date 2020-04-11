@@ -14,9 +14,14 @@ let temperature = document.getElementById('temperature');
     };
 
 
-var element = document.querySelector("door");
-element.addEventListener("click", toggleDoor);
+// var element = document.querySelector("oven-door");
+// element.addEventListener("click", toggleDoor);
+//
+// function toggleDoor() {
+//   element.classList.toggle("doorOpen");
+// }
 
-function toggleDoor() {
+function doorOpen() {
+  var element = document.getElementById("oven-door");
   element.classList.toggle("doorOpen");
 }
