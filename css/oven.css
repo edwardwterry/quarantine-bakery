@@ -1,0 +1,125 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: lightgrey;
+}
+
+.oven-exterior {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  background-color: #C2E4EA;
+  width: 400px;
+  height: 500px;
+  border-radius: 15px;
+}
+
+.oven-display {
+  position: absolute;
+  top: 35px;
+  left: 25px;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.temp-text{
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-family: helvetica;
+  font-size: 100%;
+  color: blue;
+}
+
+.time-text{
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  font-family: helvetica;
+  font-size: 100%;
+  color: blue;
+}
+
+.oven-temp {
+  position: absolute;
+  top: 35px;
+  left: 250px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #95BEC4;
+}
+
+.oven-timer {
+  left: 320px;
+}
+
+.temp-indicator {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  width: 10px;
+  height: 20px;
+  background-color: #3B5570;
+  border-radius: 50%;
+}
+
+/* .timer-indicator {
+
+} */
+
+.oven-interior {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  background-color: #FFFECE;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.interior-lines {
+  position: absolute;
+  background-color: darkgrey;
+  top: 220px;
+  width: 300px;
+  height: 5px;
+}
+
+.oven-door {
+  position: absolute;
+  top: 125px;
+  left: 25px;
+  border-style: solid;
+  border-width: 50px;
+  border-color: #95BEC4;
+  background-color: rgba(5, 5, 5, 0.1);
+  border-radius: 10px;
+  width: 250px;
+  height: 250px;
+  transform-origin: bottom;
+  /*Speed of the Door animation*/
+  transition: all 0.5s ease-in-out;
+}
+
+.oven-handle {
+  position: absolute;
+  top: -25px;
+  left: 25px;
+  height: 10px;
+  width: 200px;
+  background-color: #3B5570;
+  border-radius: 5px;
+}
+
+.doorOpen
+{
+  /*prespectiv creates the door open effect*/
+  transform: perspective(500px) translateZ(0px) translateX(0px) translateY(0px) rotateX(-105deg);
+}
