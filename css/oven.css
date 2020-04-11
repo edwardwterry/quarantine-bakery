@@ -9,12 +9,25 @@ body {
 
 .oven-exterior {
   position: absolute;
-  top: 80px;
-  left: 80px;
+  top: 0px;
+  left: 20px;
   background-color: #C2E4EA;
   width: 400px;
-  height: 500px;
+  height: 495px;
   border-radius: 15px;
+}
+
+
+#tempUp {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+#tempDown {
+  position: absolute;
+  top: 50px;
+  left: 150px;
 }
 
 .oven-display {
@@ -101,8 +114,8 @@ body {
   border-color: #95BEC4;
   background-color: rgba(5, 5, 5, 0.1);
   border-radius: 10px;
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   transform-origin: bottom;
   /*Speed of the Door animation*/
   transition: all 0.5s ease-in-out;
