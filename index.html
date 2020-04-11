@@ -3,11 +3,13 @@
   <head>
     <title>Quarantine Bakery</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap" rel="stylesheet">
     <script src="js/libs/jquery-3.3.1.min.js"></script>
-    <script src="js/sound.js"></script> 
-    <script src="js/fsm.js"></script> 
-    <script src="js/anim.js"></script> 
+    <script src="js/sound.js"></script>
+    <script src="js/fsm.js"></script>
+    <script src="js/anim.js"></script>
     <script src="js/interaction.js"></script>
+    <script src="js/oven-buttons.js"></script>
   </head>
     <body style="background-color: #88AAA3;">
         <div class="floor"></div>
@@ -29,6 +31,11 @@
       </div>
         <div class="ovenBackground">
           <div class="ovenTop">
+            <!-- temp buttons -->
+            <div id="temperature">0</div>
+            <input type="button" id="tempUp" onClick="tempUp()">Up</input>
+            <input type="button" id="tempDown" onClick="tempDown()">Down</input>
+            <!-- temp buttons -->
             <div class="ovenButtons"></div>
             <div class="ovenButtons"></div>
             <div class="ovenButtons"></div>
@@ -37,13 +44,13 @@
           <div class="ovenDoor"></div>
           <div class="ovenBottom"></div>
         </div>
-        
-        
+
+
           <div class="toast"></div>
         <div class="bowl"></div>
          </div>
         </div>
-      </div>    
-    
+      </div>
+
   </body>
 </html>
