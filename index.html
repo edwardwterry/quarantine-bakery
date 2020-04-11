@@ -62,6 +62,11 @@
       <span class="bread3__strip bread3__strip--2"></span>
       <span class="bread3__strip bread3__strip--3"></span>
     </div>
+    <div class="bread_first">
+      <span class="bread1__strip bread1__strip--1"></span>
+      <span class="bread1__strip bread1__strip--2"></span>
+      <span class="bread1__strip bread1__strip--3"></span>
+    </div>
   <div class="steam">
       <span class="steam__ring steam__ring--1"></span>
       <span class="steam__ring steam__ring--2"></span>
@@ -85,7 +90,7 @@
     });
     var ding = new Howl({ src: ['assets/audio/ding.wav']});
     var door = new Howl({ src: ['assets/audio/door.wav']});
-    $('.ovenBackground').click(function () {
+    $('.oven-handle').click(function () {
           console.log("Clicked oven door!");
           if (door_open && !bread_in_oven){
             // put bread in oven
