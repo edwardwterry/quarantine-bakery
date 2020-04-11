@@ -9,6 +9,8 @@
     z-index: 2;
     overflow: hidden;
     animation: pulse 2s infinite;
+    left:69%;
+    top: 600px;
   }
   
   .bread1__strip {
