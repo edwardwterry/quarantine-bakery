@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="css/oven.css" />
     <link rel="stylesheet" href="css/bread_final.css" />
     <link rel="stylesheet" href="css/bread_in_oven.css" />
-    <link rel="stylesheet" href="css/recipe-book.css">
+    <link rel="stylesheet" href="css/recipe-book.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap"
       rel="stylesheet"
     />
     <script src="js/libs/jquery-3.3.1.min.js"></script>
+    <script src="js/libs/state-machine.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js"></script>
   </head>
 
@@ -39,8 +40,8 @@
         <div class="oven-display">
           <p class="temp-text" id="temperature">0</p>
         </div>
-        <input type="button" id="tempUp" onClick="tempUp()" />
-        <input type="button" id="tempDown" onClick="tempDown()" />
+        <input type="button" id="tempUp" />
+        <input type="button" id="tempDown" />
         <div class="temp-text time-text"></div>
         <div class="oven-temp">
           <div class="temp-indicator"></div>
@@ -80,14 +81,15 @@
     <div class="pagebottom"></div>
     <div class="pagebottom pagebottom-right"></div>
     <div class="book-center"></div>
-    <div class="text">1. Open the oven door. <br><br><br>
-      2. Put the bread in the oven. <br><br><br>
-      3. Close the oven door.
+    <div class="text">
+      1. Adjust the temperature.<br /><br /><br />
+      2. Open the oven door. <br /><br /><br />
+      3. Put the bread in the oven.
     </div>
     <div class="text right-text">
-      4. Adjust the temperature.<br><br><br>
-      5. Wait 30 seconds. <br><br><br>
+      4. Close the oven door.<br /><br /><br />
+      5. Wait 30 seconds. <br /><br /><br />
       6. Open the door for your freshly baked loaf!
-      </div>
+    </div>
   </body>
 </html>
