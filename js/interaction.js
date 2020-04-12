@@ -113,6 +113,7 @@ $(document).ready(function () {
     if (fsm_door.state == "opened") {
       fsm_bread_location.intoOven();
       $(".bread_counter").hide();
+      $(".steam__ring").hide();
       $(".bread_oven").show();
     }
   });
@@ -121,6 +122,7 @@ $(document).ready(function () {
     if (fsm_door.state == "opened") {
       fsm_bread_location.outOfOven();
       $(".bread_counter").show();
+      $(".steam__ring").show();
       $(".bread_oven").hide();
       getFinalBreadState();
     }
@@ -131,23 +133,54 @@ $(document).ready(function () {
       console.log("Oven was too hot")
       // oven too hot
       // change color of bread_counter to black
+      $(".bread_counter").css("background-color", "#AA631B");
+      $(".bread_counter").height("80px" );
+      $(".bread_counter").width("190px" );
+      $(".bread3__strip").css("background-color", "#7F4A16");
+      $(".bread3__strip").width("25px");
+      $(".bread3__strip").height("50px");
+
     } else if (fsm_oven_temp.state == "cold") {
       console.log("Oven was too cold")
       // oven too cold
       // change bread_counter to collapsed apperance
+      $(".bread_counter").css("background-color", "#F7E4C4");
+      $(".bread_counter").height("30px" );
+      $(".bread_counter").width("150px" );
+      $(".bread3__strip").css("background-color", "#F4BEA4");
+      $(".bread3__strip").width("10px");
+      $(".bread3__strip").height("30px");
+
     } else {
       // temperature was OK
       if (duration < baking_time_range[0]) {
         console.log("Too impatient")
         // not long enough
         // change bread_counter to collapsed apperance
+        $(".bread_counter").css("background-color", "#F7E4C4");
+        $(".bread_counter").height("30px" );
+        $(".bread_counter").width("150px" );
+        $(".bread3__strip").css("background-color", "#F4BEA4");
+        $(".bread3__strip").width("10px");
+        $(".bread3__strip").height("30px");
+
       } else if (duration > baking_time_range[1]) {
         console.log("Too long in oven")
         // in for too long
         // change color of bread_counter to black
+        $(".bread_counter").css("background-color", "#AA631B");
+        $(".bread_counter").height("80px" );
+        $(".bread_counter").width("190px" );
+        $(".bread3__strip").css("background-color", "#7F4A16");
+        $(".bread3__strip").width("25px");
+        $(".bread3__strip").height("50px");
       } else {
         console.log("Just right!")
         // steamy juicy loaf
+        $(".bread_counter").css("background-color", "#F4B651");
+        $(".bread_counter").height("115px" );
+        $(".bread_counter").width("190px" );
+        $(".bread3__strip").css("background-color", "#D48B3A");
       }
     }
   }
