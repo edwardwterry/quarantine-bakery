@@ -11,18 +11,9 @@ let fsm_door = new StateMachine({
       console.log("Opening door");
     },
     onClose: function () {
-      console.log("Opening door");
+      console.log("Closing door");
     },
   },
-});
-
-let fsm_bread_cook = new StateMachine({
-  init: "raw",
-  transitions: [
-    { name: "collapse", from: "raw", to: "collapsed" },
-    { name: "bake", from: "raw", to: "baked" },
-    { name: "burn", from: "raw", to: "burned" },
-  ],
 });
 
 let fsm_bread_location = new StateMachine({
@@ -30,7 +21,7 @@ let fsm_bread_location = new StateMachine({
   transitions: [
     { name: "intoOven", from: "on_counter", to: "in_oven" },
     { name: "outOfOven", from: "in_oven", to: "on_counter" },
-  ]
+  ],
 });
 
 let fsm_oven_temp = new StateMachine({
@@ -53,9 +44,10 @@ let fsm_oven_temp = new StateMachine({
 
 $(document).ready(function () {
   $(".bread_oven").hide();
+  let timer = new Timer(1000);
 
-  let baking_time_range = [20.0, 25.0];
-  let temperature_range = [60.0, 80.0];
+  let baking_time_range = [10.0, 15.0];
+  let temperature_range = [400.0, 410.0];
   let temp = 0;
 
   var tick = new Howl({
@@ -67,12 +59,18 @@ $(document).ready(function () {
     door.play();
     if (fsm_door.state == "closed") {
       fsm_door.open();
-      stopTimer();
       tick.stop();
+      if (fsm_bread_location.state == "in_oven") {
+        timer.stop();
+        let duration = timer.ticks();
+        getFinalBreadState(duration);
+      }
     } else {
       fsm_door.close();
-      startTimer();
-      tick.play();
+      if (fsm_bread_location.state == "in_oven") {
+        tick.play();
+        timer.start();
+      }
     }
     console.log("Door state: " + fsm_door.state);
   });
@@ -111,7 +109,7 @@ $(document).ready(function () {
   });
 
   $(".bread_counter").click(function () {
-    console.log('bread loc: ' + fsm_bread_location.state);
+    console.log("bread loc: " + fsm_bread_location.state);
     if (fsm_door.state == "opened") {
       fsm_bread_location.intoOven();
       $(".bread_counter").hide();
@@ -128,8 +126,30 @@ $(document).ready(function () {
     }
   });
 
-  function getFinalBreadState() {
-    
+  function getFinalBreadState(duration) {
+    if (fsm_oven_temp.state == "overheated") {
+      console.log("Oven was too hot")
+      // oven too hot
+      // change color of bread_counter to black
+    } else if (fsm_oven_temp.state == "cold") {
+      console.log("Oven was too cold")
+      // oven too cold
+      // change bread_counter to collapsed apperance
+    } else {
+      // temperature was OK
+      if (duration < baking_time_range[0]) {
+        console.log("Too impatient")
+        // not long enough
+        // change bread_counter to collapsed apperance
+      } else if (duration > baking_time_range[1]) {
+        console.log("Too long in oven")
+        // in for too long
+        // change color of bread_counter to black
+      } else {
+        console.log("Just right!")
+        // steamy juicy loaf
+      }
+    }
   }
 
   function getRangeStatus(value, range) {
