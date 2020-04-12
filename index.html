@@ -2,60 +2,60 @@
 <html>
   <head>
     <title>Quarantine Bakery</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/oven.css">
-    <link rel="stylesheet" href="css/bread_final.css">
-    <link rel="stylesheet" href="css/bread_in_oven.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/oven.css" />
+    <link rel="stylesheet" href="css/bread_final.css" />
+    <link rel="stylesheet" href="css/bread_in_oven.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <script src="js/libs/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js">
-      // import {Howl, Howler} from 'howler';
-    </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js"></script>
   </head>
 
-  <body style="background-color: #88AAA3;">
+  <body style="background-color: #88aaa3;">
+    <script src="js/interaction.js"></script>
     <div class="floor"></div>
     <div class="counter">
       <div class="counterSurface">
-      <div class="counterDoor ">
-      <div class="counterDoorknob1"></div>
-    </div>
-    <div class="counterDoor ">
-      <div class="counterDoorknob2"></div>
-    </div>
-    <div class="counterDoor ">
-      <div class="counterDoorknob3"></div>
-    </div>
-    <div class="counterDoor ">
-      <div class="counterDoorknob4"></div>
-    </div>
-    </div>
+        <div class="counterDoor">
+          <div class="counterDoorknob1"></div>
+        </div>
+        <div class="counterDoor">
+          <div class="counterDoorknob2"></div>
+        </div>
+        <div class="counterDoor">
+          <div class="counterDoorknob3"></div>
+        </div>
+        <div class="counterDoor">
+          <div class="counterDoorknob4"></div>
+        </div>
+      </div>
     </div>
     <div class="ovenBackground">
-    <div class="oven-exterior">
-      <div class="oven-display">
-        <p class="temp-text" id="temperature">100 <sup>o</sup></p>
+      <div class="oven-exterior">
+        <div class="oven-display">
+          <p class="temp-text" id="temperature">100 <sup>o</sup></p>
+        </div>
+        <input type="button" id="tempUp" onClick="tempUp()" />
+        <input type="button" id="tempDown" onClick="tempDown()" />
+        <div class="temp-text time-text"></div>
+        <div class="oven-temp">
+          <div class="temp-indicator"></div>
+        </div>
+        <div class="oven-temp oven-timer">
+          <div class="temp-indicator"></div>
+        </div>
+        <div class="oven-interior">
+          <div class="interior-lines"></div>
+        </div>
+        <div id="oven-door" class="oven-door" onClick="doorOpen()">
+          <div class="oven-handle"></div>
+        </div>
       </div>
-      <input type="button" id="tempUp" onClick="tempUp()"></input>
-      <input type="button" id="tempDown" onClick="tempDown()"></input>
-      <div class="temp-text time-text"></div>
-      <div class="oven-temp">
-        <div class="temp-indicator"></div>
-      </div>
-      <div class="oven-temp oven-timer">
-        <div class="temp-indicator"></div>
-      </div>
-      <div class="oven-interior">
-        <div class="interior-lines"></div>
-      </div>
-      <div id="oven-door" class="oven-door" onClick="doorOpen()">
-        <div class="oven-handle"></div>
-      </div>
-    </div>
     </div>
     <script src="js/oven-buttons.js"></script>
-
 
     <div class="bread_final">
       <span class="bread3__strip bread3__strip--1"></span>
@@ -67,99 +67,10 @@
       <span class="bread1__strip bread1__strip--2"></span>
       <span class="bread1__strip bread1__strip--3"></span>
     </div>
-  <div class="steam">
+    <div class="steam">
       <span class="steam__ring steam__ring--1"></span>
       <span class="steam__ring steam__ring--2"></span>
       <span class="steam__ring steam__ring--3"></span>
     </div>
-
-    <div class="toast"></div>
-    <div class="bowl"></div>
-    </div>
-    </div>
-    </div>
-
-    <script>
-      $(document).ready(function() {
-
-        let baking_time_range = [10.0, 15.0]
-        let temperature_range = [400.0, 425.0]
-
-        var tick = new Howl({
-      src: ['assets/audio/tick.wav']
-    });
-    var ding = new Howl({ src: ['assets/audio/ding.wav']});
-    var door = new Howl({ src: ['assets/audio/door.wav']});
-    $('.oven-handle').click(function () {
-          console.log("Clicked oven door!");
-          if (door_open && !bread_in_oven){
-            // put bread in oven
-          } else if (!door_open && bread_in_oven){
-            // if not baking, start baking and timer
-            if (!baking) {
-              startTimer();
-            } else {
-              stopTimer();
-            }
-          } else if (!door_open && !bread_in_oven){
-            // open door
-          } else if (door_open && bread_in_oven){
-            // do nothing
-          }
-          door.play();
-    });
-
-    function getRangeStatus(value, range){
-      if (value < range[0]){
-        return 0;
-      } else if (value > range[1]){
-        return 2;
-      } else {
-        return 1;
-      }
-    }
-
-    let door_open = false;
-    let bread_in_oven = false;
-    let outcomes = ['undercooked', 'ok', 'burned']
-    let baked = false;
-    function determineOutcome(time){
-      return outcomes[getRangeStatus(time, baking_time_range)];
-    }
-
-    // https://www.youtube.com/watch?v=kDnfrlK2CLg&t=315s
-    let time = 0;
-    let baking = false;
-
-    function startTimer(){
-      baking = true;
-      increment();
-    }
-
-    function stopTimer(){
-      baking = false;
-    }
-
-    function toggle(variable){
-      return !variable;
-    }
-  
-    function increment(){
-      if (baking){
-        setTimeout(function() {
-          time++;
-          console.log("Time: " + time);
-          increment();
-        }, 100);
-      }
-    }
-    // close the door
-    // start the timer
-    // open the door
-    // check the difference between opened-closed, compare to range
-
-      });
-    </script>
-
   </body>
 </html>
