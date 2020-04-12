@@ -44,6 +44,8 @@ let fsm_oven_temp = new StateMachine({
 
 $(document).ready(function () {
   $(".bread_oven").hide();
+  $(".steam").hide();
+  $(".bread3__strip").hide();
   let timer = new Timer(1000);
 
   let baking_time_range = [10.0, 15.0];
@@ -181,6 +183,7 @@ $(document).ready(function () {
         $(".bread_counter").height("115px" );
         $(".bread_counter").width("190px" );
         $(".bread3__strip").css("background-color", "#D48B3A");
+        $(".steam").show();
       }
     }
   }
