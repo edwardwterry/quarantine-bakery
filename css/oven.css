@@ -12,14 +12,43 @@
 #tempUp {
   position: absolute;
   top: 50px;
-  left: 100px;
+  left: 120px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #3B5570;
 }
 
 #tempDown {
   position: absolute;
   top: 50px;
-  left: 150px;
+  left: 155px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #3B5570;
+
 }
+
+/* #up-text {
+    font-family: 'Pacifico', cursive;
+    position: absolute;
+    top: 15px;
+    left: 95px;
+    font-size: 70%;
+    color: #3B5570;
+}
+
+#down-text {
+  font-family: 'Pacifico', cursive;
+  position: absolute;
+  top: 15px;
+  left: 145px;
+  font-size: 70%;
+  color: #3B5570;
+} */
 
 .oven-display {
   position: absolute;
@@ -34,20 +63,20 @@
 .temp-text{
   position: absolute;
   top: 15px;
-  left: 20px;
-  font-family: helvetica;
-  font-size: 100%;
+  left: 50px;
+  font-family: 'Pacifico';
+  font-size: 150%;
   color: blue;
 }
 
-.time-text{
+/* .time-text{
   position: absolute;
   top: 50px;
   left: 100px;
   font-family: helvetica;
   font-size: 100%;
   color: blue;
-}
+} */
 
 .oven-temp {
   position: absolute;
