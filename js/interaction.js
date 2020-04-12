@@ -26,11 +26,11 @@ let fsm_bread_cook = new StateMachine({
 });
 
 let fsm_bread_location = new StateMachine({
-  init: "counter",
+  init: "on_counter",
   transitions: [
-    { name: "into_oven", from: "on_counter", to: "in_oven" },
-    { name: "out_of_oven", from: "in_oven", to: "on_counter" },
-  ],
+    { name: "intoOven", from: "on_counter", to: "in_oven" },
+    { name: "outOfOven", from: "in_oven", to: "on_counter" },
+  ]
 });
 
 let fsm_oven_temp = new StateMachine({
@@ -52,7 +52,6 @@ let fsm_oven_temp = new StateMachine({
 });
 
 $(document).ready(function () {
-
   $(".bread_oven").hide();
 
   let baking_time_range = [20.0, 25.0];
@@ -60,31 +59,20 @@ $(document).ready(function () {
   let temp = 0;
 
   var tick = new Howl({
-    src: ["assets/audio/tick.wav"],
+    src: ["assets/audio/timer.wav"],
   });
-  var ding = new Howl({ src: ["assets/audio/ding.wav"] });
   var door = new Howl({ src: ["assets/audio/door.wav"] });
   $(".oven-door").click(function () {
     console.log("Clicked oven door!");
-    // if (door_open && !bread_in_oven) {
-    //   // put bread in oven
-    // } else if (!door_open && bread_in_oven) {
-    //   // if not baking, start baking and timer
-    //   if (!baking) {
-    //     startTimer();
-    //   } else {
-    //     stopTimer();
-    //   }
-    // } else if (!door_open && !bread_in_oven) {
-    //   // open door
-    // } else if (door_open && bread_in_oven) {
-    //   // do nothing
-    // }
     door.play();
-    if (fsm_door.state == "closed"){
+    if (fsm_door.state == "closed") {
       fsm_door.open();
+      stopTimer();
+      tick.stop();
     } else {
       fsm_door.close();
+      startTimer();
+      tick.play();
     }
     console.log("Door state: " + fsm_door.state);
   });
@@ -117,45 +105,32 @@ $(document).ready(function () {
       fsm_oven_temp.state != "ok"
     ) {
       fsm_oven_temp.unoverheat();
-    } else if (
-      temp < temperature_range[0] &&
-      fsm_oven_temp.state != "cold"
-    ) {
-      fsm_oven_temp.unheat();
-    }
-  });
-
-  $("#tempDown").click(function () {
-    temp -= 20;
-    $("#temperature").html(temp);
-    console.log(fsm_oven_temp.state);
-    if (
-      temp >= temperature_range[0] &&
-      temp <= temperature_range[1] &&
-      fsm_oven_temp.state != "ok"
-    ) {
-      fsm_oven_temp.unoverheat();
-    } else if (
-      temp < temperature_range[0] &&
-      fsm_oven_temp.state != "cold"
-    ) {
+    } else if (temp < temperature_range[0] && fsm_oven_temp.state != "cold") {
       fsm_oven_temp.unheat();
     }
   });
 
   $(".bread_counter").click(function () {
-    if (fsm_door.state == "opened"){
+    console.log('bread loc: ' + fsm_bread_location.state);
+    if (fsm_door.state == "opened") {
+      fsm_bread_location.intoOven();
       $(".bread_counter").hide();
       $(".bread_oven").show();
     }
   });
 
   $(".bread_oven").click(function () {
-    if (fsm_door.state == "opened"){
+    if (fsm_door.state == "opened") {
+      fsm_bread_location.outOfOven();
       $(".bread_counter").show();
       $(".bread_oven").hide();
+      getFinalBreadState();
     }
   });
+
+  function getFinalBreadState() {
+    
+  }
 
   function getRangeStatus(value, range) {
     if (value < range[0]) {
@@ -177,7 +152,6 @@ $(document).ready(function () {
   let baking = false;
 
   function startTimer() {
-    baking = true;
     increment();
   }
 
@@ -190,7 +164,7 @@ $(document).ready(function () {
   }
 
   function increment() {
-    if (baking) {
+    if (fsm_bread_location == "in_oven") {
       setTimeout(function () {
         time++;
         console.log("Time: " + time);
@@ -198,8 +172,4 @@ $(document).ready(function () {
       }, 100);
     }
   }
-  // close the door
-  // start the timer
-  // open the door
-  // check the difference between opened-closed, compare to range
 });
