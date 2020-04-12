@@ -52,6 +52,9 @@ let fsm_oven_temp = new StateMachine({
 });
 
 $(document).ready(function () {
+
+  $(".bread_oven").hide();
+
   let baking_time_range = [20.0, 25.0];
   let temperature_range = [60.0, 80.0];
   let temp = 0;
@@ -137,6 +140,20 @@ $(document).ready(function () {
       fsm_oven_temp.state != "cold"
     ) {
       fsm_oven_temp.unheat();
+    }
+  });
+
+  $(".bread_counter").click(function () {
+    if (fsm_door.state == "opened"){
+      $(".bread_counter").hide();
+      $(".bread_oven").show();
+    }
+  });
+
+  $(".bread_oven").click(function () {
+    if (fsm_door.state == "opened"){
+      $(".bread_counter").show();
+      $(".bread_oven").hide();
     }
   });
 
