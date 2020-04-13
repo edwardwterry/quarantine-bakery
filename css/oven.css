@@ -8,32 +8,11 @@
   border-radius: 12px;
 }
 
-
-#tempUp {
+.oven-exterior > div {
   position: absolute;
-  top: 30%;
-  left: 75%;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 20px solid #3B5570;
-}
-
-#tempDown {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 20px solid #3B5570;
-
 }
 
 .oven-display {
-  position: absolute;
   top: 10%;
   left: 10%;
   width: 50%;
@@ -42,20 +21,43 @@
   background-color: white;
 }
 
-.temp-text{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 6%;
-  width: 40%;
-  text-align: center;
-  font-size: 2.2vw;
-  color: #3B5570;
-}
+    #tempUp {
+      position: absolute;
+      top: 30%;
+      left: 75%;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 20px solid #3B5570;
+    }
 
+    #tempDown {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 20px solid #3B5570;
+
+    }
+
+    .temp-text{
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 6%;
+      width: 40%;
+      text-align: center;
+      font-size: 2.2vw;
+      color: #3B5570;
+    }
+
+/* Knobs */
 .oven-temp {
-  position: absolute;
   top: 10%;
   left: 64%;
   width: 2.5vw;
@@ -64,69 +66,63 @@
   background-color: #95BEC4;
 }
 
-.oven-timer {
-  left: 80%;
-}
+    .oven-timer {
+      left: 80%;
+    }
 
-.temp-indicator {
-  position: absolute;
-  top: 0px;
-  left: 40%;
-  width: 20%;
-  height: 40%;
-  background-color: #3B5570;
-  border-radius: 50%;
-}
-
-/* .timer-indicator {
-
-} */
+    .temp-indicator {
+      position: absolute;
+      top: 0px;
+      left: 40%;
+      width: 20%;
+      height: 40%;
+      background-color: #3B5570;
+      border-radius: 50%;
+    }
 
 .oven-interior {
-  position: absolute;
-  top: 35%;
+  top: 30%;
   left: 10%;
   background-color: #FFFECE;
   width: 80%;
-  height: 50%;
+  height: 60%;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.interior-lines {
-  position: absolute;
-  background-color: darkgrey;
-  top: 70%;
-  width: 100%;
-  height: 5px;
-}
+  .interior-lines {
+    position: absolute;
+    background-color: darkgrey;
+    top: 70%;
+    width: 100%;
+    height: 5px;
+  }
 
 .oven-door {
-  position: absolute;
-  top: 35%;
+  top: 30%;
   left: 10%;
   box-shadow: 0 0 0 1.8vw inset #95BEC4;
   background-color: rgba(5, 5, 5, 0.1);
   border-radius: 10px;
   width: 80%;
-  height: 50%;
+  height: 60%;
   transform-origin: bottom;
-  /*Speed of the Door animation*/
+  /*Speed of door animation*/
   transition: all 0.5s ease-in-out;
 }
 
-.oven-handle {
-  position: absolute;
-  top: .7vw;
-  left: 10%;
-  height: 10px;
-  width: 80%;
-  background-color: #3B5570;
-  border-radius: 5px;
-}
+  .oven-handle {
+    position: absolute;
+    top: .7vw;
+    left: 10%;
+    height: 10px;
+    width: 80%;
+    background-color: #3B5570;
+    border-radius: 5px;
+  }
 
 .doorOpen
 {
-  /*prespectiv creates the door open effect*/
+  /*prespective creates the door open effect*/
   transform: perspective(1000px) translateZ(0px) translateX(0px) translateY(0px) rotateX(-105deg);
 }
