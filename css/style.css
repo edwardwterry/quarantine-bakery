@@ -4,8 +4,51 @@
 }
 
 body {
-  background-color: #88AAA3;
+  background-color: #88aaa3;
 }
+
+#gameContainer {
+  /* display: inline-flex; */
+  height: 90vh;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/*Small devices breakpoint*/
+@media (min-width: 576px) {
+  #gameContainer {
+    width: 500px;
+  }
+}
+
+/* Medium devices breakpoint*/
+@media (min-width: 768px) {
+  #gameContainer {
+    width: 700px;
+  }
+}
+
+/* Large devices breakpoint */
+@media (min-width: 992px) {
+  #gameContainer {
+  width: 900px;
+}
+}
+
+/* Extra large devices breakpoint */
+@media (min-width: 1280px) {
+  #gameContainer {
+    width: 80%;
+  }
+ }
+
 
 
 /* Fonts */
@@ -16,63 +59,75 @@ body {
   font-family: 'VT323', monospace;
 }
 
+.wall > h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4vw;
+  text-align: center;
+  margin-top: 2%;
+  color: #3B5570;
+}
+
 
 /*Kitchen Background*/
+/*wall*/
+.wall {
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  top: 0;
+  background: repeating-linear-gradient(
+  -45deg,
+ #95bec4,
+  #95bec4 30px,
+  #f7ecdf 30px,
+  #f7ecdf 48px)
+}
 /*floor*/
 .floor {
     position: absolute;
     width: 100%;
-    height: 30%;
+    height: 10%;
     bottom: 0%;
     background-color: #CCC2BC;
   }
 
   /*counter*/
-  .counterDoorknob1 {
+  .counterAndOven {
+    height: 50%;
+    width: 100%;
+    top: 40%;
+    position: absolute;
+  }
+  .counterDoorknob1, .counterDoorknob3 {
     position: absolute;
     margin: 0px;
     width: 10px;
     height: 30%;
-    bottom: 35%;
-    left: 18%;
-    background-color: black;
+    top: 15%;
+    right: 15%;
+    background-color: #3B5570;
+    border-radius: 5px;
   }
 
-  .counterDoorknob2 {
+  .counterDoorknob2, .counterDoorknob4 {
     position: absolute;
     margin: 0px;
     width: 10px;
     height: 30%;
-    bottom: 35%;
-    left: 30%;
-    background-color: black;
+    top: 15%;
+    left: 15%;
+    background-color: #3B5570;
+    border-radius: 5px;
   }
 
-  .counterDoorknob3 {
-    position: absolute;
-    margin: 0px;
-    width: 10px;
-    height: 30%;
-    bottom: 35%;
-    right: 30%;
-    background-color: black;
-  }
-
-  .counterDoorknob4 {
-    position: absolute;
-    margin: 0px;
-    width: 10px;
-    height: 30%;
-    bottom: 35%;
-    right: 18%;
-    background-color: black;
-  }
 
   .counterDoor {
     display: inline-block;
-    margin: 2%;
+    position: relative;
+    margin: 0 2%;
     width: 20%;
     height: 90%;
+    top: 5%;
     background-color: #F7ECDF;
   }
 
@@ -87,25 +142,21 @@ body {
   }
 
   .counter{
-    position: absolute;
+    position: relative;
     text-align: center;
-    margin: 0%;
-    width: 60%;
-    height: 50%;
-    bottom: 10%;
-    left: 0;
+    width: 70%;
+    height: 100%;
+    float: left;
     background-color: #F7ECDF;
   }
 
   /*Oven*/
   .ovenBackground{
-    position: absolute;
-    text-align: center;
+    position: relative;
     margin: 0%;
-    width: 40%;
-    height: 50%;
-    bottom: 10%;
-    right: 0;
+    width: 30%;
+    height: 100%;
+    float: right;
     background-color: #D7CDC4;
   }
 

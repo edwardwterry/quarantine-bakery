@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Quarantine Bakery</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/oven.css" />
-    <link rel="stylesheet" href="css/bread_raw.css" />
-    <link rel="stylesheet" href="css/bread_final.css" />
-    <link rel="stylesheet" href="css/bread_in_oven.css" />
-    <link rel="stylesheet" href="css/recipe-book.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap"
-      rel="stylesheet"
-    />
-    <script src="js/libs/jquery-3.3.1.min.js"></script>
-    <script src="js/libs/timer.js"></script>
-    <script src="js/libs/state-machine.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js"></script>
-  </head>
 
-  <body style="background-color: #88aaa3;">
-    <script src="js/interaction.js"></script>
+<head>
+  <title>Quarantine Bakery</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/oven.css" />
+  <link rel="stylesheet" href="css/bread_raw.css" />
+  <link rel="stylesheet" href="css/bread_final.css" />
+  <link rel="stylesheet" href="css/bread_in_oven.css" />
+  <link rel="stylesheet" href="css/recipe-book.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap" rel="stylesheet" />
+  <script src="js/libs/jquery-3.3.1.min.js"></script>
+  <script src="js/libs/timer.js"></script>
+  <script src="js/libs/state-machine.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js"></script>
+</head>
+
+<body>
+  <script src="js/interaction.js"></script>
+  <div id="gameContainer">
+    <div class="wall">
+      <h1>Quaratine Bakery</h1>
+    </div>
     <div class="floor"></div>
-    <div class="counter">
-      <div class="counterSurface">
-        <div class="counterDoor">
-          <div class="counterDoorknob1"></div>
+    <div class="counterAndOven">
+      <div class="counter">
+        <div class="counterSurface">
+          <div class="counterDoor">
+            <div class="counterDoorknob1"></div>
+          </div>
+          <div class="counterDoor">
+            <div class="counterDoorknob2"></div>
+          </div>
+          <div class="counterDoor">
+            <div class="counterDoorknob3"></div>
+          </div>
+          <div class="counterDoor">
+            <div class="counterDoorknob4"></div>
+          </div>
         </div>
-        <div class="counterDoor">
-          <div class="counterDoorknob2"></div>
-        </div>
-        <div class="counterDoor">
-          <div class="counterDoorknob3"></div>
-        </div>
-        <div class="counterDoor">
-          <div class="counterDoorknob4"></div>
+      </div>
+      <div class="ovenBackground">
+        <div class="oven-exterior">
+          <div class="oven-display">
+            <p class="temp-text" id="temperature">0°</p>
+            <input type="button" id="tempUp" />
+            <input type="button" id="tempDown" />
+          </div>
+          <div class="temp-text time-text"></div>
+          <div class="oven-temp">
+            <div class="temp-indicator"></div>
+          </div>
+          <div class="oven-temp oven-timer">
+            <div class="temp-indicator"></div>
+          </div>
+          <div class="oven-interior">
+            <div class="interior-lines"></div>
+          </div>
+          <div id="oven-door" class="oven-door" onClick="doorOpen()">
+            <div class="oven-handle"></div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="ovenBackground">
-      <div class="oven-exterior">
-        <div class="oven-display">
-          <p class="temp-text" id="temperature">0</p>
-        </div>
-        <input type="button" id="tempUp" />
-        <input type="button" id="tempDown" />
-        <div class="temp-text time-text"></div>
-        <div class="oven-temp">
-          <div class="temp-indicator"></div>
-        </div>
-        <div class="oven-temp oven-timer">
-          <div class="temp-indicator"></div>
-        </div>
-        <div class="oven-interior">
-          <div class="interior-lines"></div>
-        </div>
-        <div id="oven-door" class="oven-door" onClick="doorOpen()">
-          <div class="oven-handle"></div>
-        </div>
-      </div>
-    </div>
+
     <script src="js/oven-buttons.js"></script>
+
 
     <div class="bread_counter">
       <span class="bread3__strip bread3__strip--1"></span>
@@ -77,6 +83,8 @@
       <span class="steam__ring steam__ring--3"></span>
     </div>
 
+  </div>
+  <div id="book" >
     <div class="book-cover"></div>
     <div class="pages"></div>
     <div class="pages pages-right"></div>
@@ -93,5 +101,7 @@
       5. Wait for the timer to go off. <br /><br />
       6. Open the door and retrieve your freshly baked loaf!
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

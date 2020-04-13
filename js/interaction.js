@@ -136,8 +136,8 @@ $(document).ready(function () {
       // oven too hot
       // change color of bread_counter to black
       $(".bread_counter").css("background-color", "#AA631B");
-      $(".bread_counter").height("80px" );
-      $(".bread_counter").width("190px" );
+      $(".bread_counter").height("10%" );
+      $(".bread_counter").width("10%" );
       $(".bread3__strip").css("background-color", "#7F4A16");
       $(".bread3__strip").width("25px");
       $(".bread3__strip").height("50px");
@@ -147,8 +147,8 @@ $(document).ready(function () {
       // oven too cold
       // change bread_counter to collapsed apperance
       $(".bread_counter").css("background-color", "#F7E4C4");
-      $(".bread_counter").height("30px" );
-      $(".bread_counter").width("150px" );
+      $(".bread_counter").height("7%" );
+      $(".bread_counter").width("9%" );
       $(".bread3__strip").css("background-color", "#F4BEA4");
       $(".bread3__strip").width("10px");
       $(".bread3__strip").height("30px");
@@ -160,10 +160,10 @@ $(document).ready(function () {
         // not long enough
         // change bread_counter to collapsed apperance
         $(".bread_counter").css("background-color", "#F7E4C4");
-        $(".bread_counter").height("30px" );
-        $(".bread_counter").width("150px" );
+        $(".bread_counter").height("7%" );
+        $(".bread_counter").width("9%" );
         $(".bread3__strip").css("background-color", "#F4BEA4");
-        $(".bread3__strip").width("10px");
+        $(".bread3__strip").width("10px"); 
         $(".bread3__strip").height("30px");
 
       } else if (duration > baking_time_range[1]) {
@@ -171,8 +171,8 @@ $(document).ready(function () {
         // in for too long
         // change color of bread_counter to black
         $(".bread_counter").css("background-color", "#AA631B");
-        $(".bread_counter").height("80px" );
-        $(".bread_counter").width("190px" );
+        $(".bread_counter").height("10%" );
+        $(".bread_counter").width("10%" );
         $(".bread3__strip").css("background-color", "#7F4A16");
         $(".bread3__strip").width("25px");
         $(".bread3__strip").height("50px");
@@ -180,8 +180,8 @@ $(document).ready(function () {
         console.log("Just right!")
         // steamy juicy loaf
         $(".bread_counter").css("background-color", "#F4B651");
-        $(".bread_counter").height("115px" );
-        $(".bread_counter").width("190px" );
+        $(".bread_counter").height("11%" );
+        $(".bread_counter").width("11%" );
         $(".bread3__strip").css("background-color", "#D48B3A");
         $(".steam").show();
       }

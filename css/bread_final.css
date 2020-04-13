@@ -1,14 +1,10 @@
-* {
-    box-sizing: border-box;
-  }
-
   /*bread final stage*/
   .bread_counter {
     position: absolute;
-    width: 200px;
-    height: 115px;
-    bottom: 600px;
-    left: 800px;
+    width: 10%;
+    height: 10%;
+    top: 31%;
+    left: 40%;
     background-color: #F4B651;
     border-radius: 50%;
     border-bottom: 15px solid #D48B3A;
@@ -44,16 +40,14 @@
   /*steam*/
   .steam {
     position: absolute;
-    bottom: 650px;
-    left: 0;
-    right: 0;
+    top: 16%;
+    left: 42%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100px;
     height: 180px;
-    margin: auto;
     animation: steamMoves 1.2s infinite linear;
   }
 
