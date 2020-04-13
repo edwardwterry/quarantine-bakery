@@ -1,21 +1,21 @@
 * {
     box-sizing: border-box;
   }
-  
+
   /*bread final stage*/
-  .bread_final {
-    position: relative;
+  .bread_counter {
+    position: absolute;
     width: 200px;
     height: 115px;
-    top: 30vh;
-    left: 50vh;
+    bottom: 600px;
+    left: 800px;
     background-color: #F4B651;
     border-radius: 50%;
-    border-bottom: 20px solid #f6874b;
+    border-bottom: 15px solid #D48B3A;
     z-index: 2;
     overflow: hidden;
   }
-  
+
   .bread3__strip {
     position: absolute;
     top: -30px;
@@ -24,27 +24,27 @@
     background-color: #e0881e;
     border-radius: 50%;
   }
-  
+
   .bread3__strip--1 {
     left: 40px;
     transform: rotate(-16deg);
   }
-  
+
   .bread3__strip--2 {
     left: 0;
     right: 0;
     margin: auto;
   }
-  
+
   .bread3__strip--3 {
     right: 40px;
     transform: rotate(16deg);
   }
-  
+
   /*steam*/
   .steam {
     position: absolute;
-    top: 100px;
+    bottom: 650px;
     left: 0;
     right: 0;
     display: flex;
@@ -56,7 +56,7 @@
     margin: auto;
     animation: steamMoves 1.2s infinite linear;
   }
-  
+
   .steam__ring {
     position: relative;
     width: 60px;
@@ -67,19 +67,19 @@
     border-left: 0;
     animation: steamRingRotates 1.2s infinite linear;
   }
-  
+
   .steam__ring--2 {
     top: -16px;
     left: -12px;
     animation-delay: -1s;
   }
-  
+
   .steam__ring--3 {
     top: -32px;
     right: -12px;
     animation-delay: -2s;
   }
-  
+
   @keyframes steamMoves {
     0% {
       opacity: 0;
@@ -94,7 +94,7 @@
       transform: translateY(-60px);
     }
   }
-  
+
   @keyframes steamRingRotates {
     0% {
       opacity: 0;
@@ -109,4 +109,3 @@
       transform: rotate(359deg);
     }
   }
-  
