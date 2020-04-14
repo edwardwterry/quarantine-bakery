@@ -62,8 +62,9 @@ body {
 .wall > h1 {
   font-family: 'Pacifico', cursive;
   font-size: 4vw;
-  text-align: center;
+  text-align: right;
   margin-top: 2%;
+  margin-right: 5%;
   color: #3B5570;
 }
 

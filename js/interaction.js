@@ -141,7 +141,7 @@ $(document).ready(function () {
       $(".bread3__strip").css("background-color", "#7F4A16");
       $(".bread3__strip").width("25px");
       $(".bread3__strip").height("50px");
-
+      $(".bread3__strip").show();
     } else if (fsm_oven_temp.state == "cold") {
       console.log("Oven was too cold")
       // oven too cold
@@ -152,7 +152,7 @@ $(document).ready(function () {
       $(".bread3__strip").css("background-color", "#F4BEA4");
       $(".bread3__strip").width("10px");
       $(".bread3__strip").height("30px");
-
+      $(".bread3__strip").show();
     } else {
       // temperature was OK
       if (duration < baking_time_range[0]) {
@@ -165,7 +165,7 @@ $(document).ready(function () {
         $(".bread3__strip").css("background-color", "#F4BEA4");
         $(".bread3__strip").width("10px"); 
         $(".bread3__strip").height("30px");
-
+        $(".bread3__strip").show();
       } else if (duration > baking_time_range[1]) {
         console.log("Too long in oven")
         // in for too long
@@ -176,6 +176,7 @@ $(document).ready(function () {
         $(".bread3__strip").css("background-color", "#7F4A16");
         $(".bread3__strip").width("25px");
         $(".bread3__strip").height("50px");
+        $(".bread3__strip").show();
       } else {
         console.log("Just right!")
         // steamy juicy loaf
@@ -183,6 +184,7 @@ $(document).ready(function () {
         $(".bread_counter").height("11%" );
         $(".bread_counter").width("11%" );
         $(".bread3__strip").css("background-color", "#D48B3A");
+        $(".bread3__strip").show();
         $(".steam").show();
       }
     }
