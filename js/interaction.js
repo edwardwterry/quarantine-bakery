@@ -43,6 +43,7 @@ let fsm_oven_temp = new StateMachine({
 });
 
 $(document).ready(function () {
+  $("#bookClosed").hide();
   $(".bread_oven").hide();
   $(".steam").hide();
   $(".bread3__strip").hide();
@@ -230,4 +231,14 @@ $(document).ready(function () {
       }, 100);
     }
   }
+
+  $("#closeBook").click(function () {
+    $("#booksOnCounter").show();
+    $("#book").hide();
+  });
+
+  $("#booksOnCounter").click(function () {
+    $("#booksOnCounter").hide();
+    $("#book").show();
+  });
 });

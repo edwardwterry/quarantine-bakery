@@ -5,7 +5,7 @@
   <title>Quarantine Bakery</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/oven.css" />
-  <link rel="stylesheet" href="css/bread_raw.css" />
+  <!-- <link rel="stylesheet" href="css/bread_raw.css" /> -->
   <link rel="stylesheet" href="css/bread_final.css" />
   <link rel="stylesheet" href="css/bread_in_oven.css" />
   <link rel="stylesheet" href="css/recipe-book.css" />
@@ -65,7 +65,6 @@
 
     <script src="js/oven-buttons.js"></script>
 
-
     <div class="bread_counter">
       <span class="bread3__strip bread3__strip--1"></span>
       <span class="bread3__strip bread3__strip--2"></span>
@@ -82,8 +81,18 @@
       <span class="steam__ring steam__ring--3"></span>
     </div>
 
+    <div id="booksOnCounter">
+      <p>Recipes</p>
+      <p>Baking Bread</p>
+    </div>
+
+    <div id="bowl">
+      <div id="bowlRim"></div>
+    </div>
   </div>
-  <div id="book" >
+  <!-- end gameContainer-->
+
+  <div id="book">
     <div class="book-cover"></div>
     <div class="pages"></div>
     <div class="pages pages-right"></div>
@@ -99,6 +108,12 @@
       4. Close the oven door.<br /><br />
       5. Wait for the timer to go off. <br /><br />
       6. Open the door and retrieve your freshly baked loaf!
+    </div>
+    <div id="closeBook">
+      <svg viewPort="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <line x1="1" y1="19" x2="19" y2="1" stroke="#db9186" stroke-width="3" />
+        <line x1="1" y1="1" x2="19" y2="19" stroke="#db9186" stroke-width="3" />
+      </svg>
     </div>
   </div>
 </body>

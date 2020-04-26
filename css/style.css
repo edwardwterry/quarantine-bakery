@@ -38,8 +38,8 @@ body {
 /* Large devices breakpoint */
 @media (min-width: 992px) {
   #gameContainer {
-  width: 900px;
-}
+    width: 900px;
+  }
 }
 
 /* Extra large devices breakpoint */
@@ -47,19 +47,18 @@ body {
   #gameContainer {
     width: 80%;
   }
- }
-
-
+}
 
 /* Fonts */
 .recipe {
   font-family: 'Pacifico', cursive;
 }
+
 #temperature {
   font-family: 'VT323', monospace;
 }
 
-.wall > h1 {
+.wall>h1 {
   font-family: 'Pacifico', cursive;
   font-size: 4vw;
   text-align: right;
@@ -68,7 +67,6 @@ body {
   color: #3B5570;
 }
 
-
 /*Kitchen Background*/
 /*wall*/
 .wall {
@@ -76,121 +74,139 @@ body {
   height: 40%;
   width: 100%;
   top: 0;
-  background: repeating-linear-gradient(
-  -45deg,
- #95bec4,
-  #95bec4 30px,
-  #f7ecdf 30px,
-  #f7ecdf 48px)
+  background: repeating-linear-gradient(-45deg,
+      #95bec4,
+      #95bec4 30px,
+      #f7ecdf 30px,
+      #f7ecdf 48px)
 }
+
 /*floor*/
 .floor {
-    position: absolute;
-    width: 100%;
-    height: 10%;
-    bottom: 0%;
-    background-color: #CCC2BC;
-  }
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  bottom: 0%;
+  background-color: #CCC2BC;
+}
 
-  /*counter*/
-  .counterAndOven {
-    height: 50%;
-    width: 100%;
-    top: 40%;
-    position: absolute;
-  }
-  .counterDoorknob1, .counterDoorknob3 {
-    position: absolute;
-    margin: 0px;
-    width: 10px;
-    height: 30%;
-    top: 15%;
-    right: 15%;
-    background-color: #3B5570;
-    border-radius: 5px;
-  }
+/*counter*/
+.counterAndOven {
+  height: 50%;
+  width: 100%;
+  top: 40%;
+  position: absolute;
+}
 
-  .counterDoorknob2, .counterDoorknob4 {
-    position: absolute;
-    margin: 0px;
-    width: 10px;
-    height: 30%;
-    top: 15%;
-    left: 15%;
-    background-color: #3B5570;
-    border-radius: 5px;
-  }
+.counterDoorknob1,
+.counterDoorknob3 {
+  position: absolute;
+  margin: 0px;
+  width: 10px;
+  height: 30%;
+  top: 15%;
+  right: 15%;
+  background-color: #3b5570;
+  border-radius: 5px;
+}
 
+.counterDoorknob2,
+.counterDoorknob4 {
+  position: absolute;
+  margin: 0px;
+  width: 10px;
+  height: 30%;
+  top: 15%;
+  left: 15%;
+  background-color: #3b5570;
+  border-radius: 5px;
+}
 
-  .counterDoor {
-    display: inline-block;
-    position: relative;
-    margin: 0 2%;
-    width: 20%;
-    height: 90%;
-    top: 5%;
-    background-color: #F7ECDF;
-  }
+.counterDoor {
+  display: inline-block;
+  position: relative;
+  margin: 0 2%;
+  width: 20%;
+  height: 90%;
+  top: 5%;
+  background-color: #f7ecdf;
+}
 
-  .counterSurface{
-    position: absolute;
-    margin: 0px;
-    width: 100%;
-    height: 80%;
-    bottom: 10%;
-    left: 0;
-    background-color: #CEBD98;
-  }
+.counterSurface {
+  position: absolute;
+  margin: 0px;
+  width: 100%;
+  height: 80%;
+  bottom: 10%;
+  left: 0;
+  background-color: #cebd98;
+}
 
-  .counter{
-    position: relative;
-    text-align: center;
-    width: 70%;
-    height: 100%;
-    float: left;
-    background-color: #F7ECDF;
-  }
+.counter {
+  position: relative;
+  text-align: center;
+  width: 70%;
+  height: 100%;
+  float: left;
+  background-color: #f7ecdf;
+}
 
-  /*Oven*/
-  .ovenBackground{
-    position: relative;
-    margin: 0%;
-    width: 30%;
-    height: 100%;
-    float: right;
-    background-color: #D7CDC4;
-  }
+/*Oven*/
+.ovenBackground {
+  position: relative;
+  margin: 0%;
+  width: 30%;
+  height: 100%;
+  float: right;
+  background-color: #d7cdc4;
+}
 
-  .ovenButtons{
-    display: inline-block;
-    text-align: center;
-    margin: 2%;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    top: 0%;
-    right: 0;
-    background-color: #D65945;
-  }
+.ovenButtons {
+  display: inline-block;
+  text-align: center;
+  margin: 2%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  top: 0%;
+  right: 0;
+  background-color: #d65945;
+}
 
+/*Toast*/
+.toast {
+  position: absolute;
+  margin: 10px;
+  width: 90px;
+  height: 90px;
+  top: 25%;
+  left: 20%;
+  border-radius: 20px 20px 20px 20px;
+  background-color: #f7d49d;
+}
 
-  /*Toast*/
-  .toast{
-    position: absolute;
-    margin: 10px;
-    width: 90px;
-    height: 90px;
-    top:25%;
-    left: 20%;
-    border-radius: 20px 20px 20px 20px;
-    background-color: #F7D49D;
-  }
+/*Bowl*/
+#bowl {
+  position: absolute;
+  top: 33%;
+  left: 20%;
+  background: #ccc2bc;
+  border-top-left-radius: 100% 50%;
+  border-top-right-radius: 100% 50%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  height: 10%;
+  width: 15vh;
+  box-shadow: -5px -15px inset rgba(0, 0, 0, 0.1);
+}
 
-  /*Bowl*/
-  .bowl{
-        border-bottom: 100px solid red;
-        border-left: 50px solid transparent;
-        border-right: 25px solid transparent;
-        height: 0;
-        width: 100px;
-      }
+#bowlRim {
+  position: relative;
+  top: 0;
+  width: 90%;
+  height: 33%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 5px solid white;
+}
