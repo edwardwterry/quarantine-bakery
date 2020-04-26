@@ -1,3 +1,26 @@
+#booksOnCounter {
+  position: absolute;
+  width: 14vh;
+  transform: rotate(90deg);
+  top: 29%;
+  left: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#booksOnCounter > p {
+  text-align: center;
+  padding: 0 10% 5% 10%;
+  background-color: #dca9a1;
+  font-family: "Pacifico", cursive;
+  font-size: 1.8vh;
+  color: #6b514e;
+  border-top: 13px solid #db9186;
+  border-right: 2px solid #db9186;
+  border-radius: 5px;
+}
+
 #book {
   margin: 0;
   position: absolute;
@@ -51,9 +74,9 @@
   position: absolute;
   top: 60px;
   left: 299px;
-  height:325px;
+  height: 326px;
   width: 2px;
-  background-color: #470B22;
+  background-color: #c7b2b0;
   border-radius: 1px;
 }
 
@@ -68,5 +91,11 @@
 }
 
 .right-text {
-  left:375px;
+  left: 375px;
+}
+
+#closeBook {
+  position: absolute;
+  top: 20px;
+  right: 30px;
 }
